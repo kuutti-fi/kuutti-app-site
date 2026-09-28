@@ -8,6 +8,8 @@ The placeholder page lived in the app's repository under `site/`, served by Ampl
 
 Until Amplify Hosting is connected to this repository, the placeholder in the app's repository stays where it is and is what kuutti.app shows. The move is done in that order: this repository published, Amplify connected to it, the site seen at kuutti.app, and only then `site/` and `amplify.yml` removed from the app's repository.
 
+Done in that order on 28/09/2026: the repository published, a new Amplify app connected to it and `kuutti.app` moved to it, the site seen there, and the removal from the app's repository in kuutti-fi/kuutti-app#109.
+
 ## 2. Astro, and no script (2026-09-28)
 
 The site is documents: a few pages and three long legal texts, in three languages. It needs templates, Markdown, routes per language and checks at build time, and it needs nothing in the browser.
