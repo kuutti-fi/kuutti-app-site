@@ -1,0 +1,65 @@
+---
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { DEFAULT_LOCALE, type Locale } from "../i18n/locales.ts";
+import { t } from "../i18n/ui.ts";
+
+interface Props {
+  locale: Locale;
+  slug: string;
+  title: string;
+  description: string;
+  /** Where this page is in each language that has it, this one included. */
+  alternates: Partial<Record<Locale, string>>;
+  /** A page that search engines leave alone: drafts of legal texts, the 404. */
+  noindex?: boolean;
+}
+const { locale, slug, title, description, alternates, noindex = false } = Astro.props;
+const site = Astro.site ?? new URL("https://kuutti.app");
+const name = t(locale, "site.name");
+// The home page is titled by the name alone, as the placeholder was.
+const heading = slug === "" ? title : `${title} · ${name}`;
+const own = alternates[locale];
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{heading}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    {own && <link rel="canonical" href={new URL(own, site).href} />}
+    {
+      Object.entries(alternates).map(([language, path]) => (
+        <link rel="alternate" hreflang={language} href={new URL(path, site).href} />
+      ))
+    }
+    {
+      alternates[DEFAULT_LOCALE] && (
+        <link
+          rel="alternate"
+          hreflang="x-default"
+          href={new URL(alternates[DEFAULT_LOCALE], site).href}
+        />
+      )
+    }
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:title" content={heading} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={new URL("/kuutti.png", site).href} />
+    <meta name="referrer" content="no-referrer" />
+  </head>
+  <body>
+    <a class="skip" href="#content">{t(locale, "skip")}</a>
+    <Header locale={locale} slug={slug} />
+    <main id="content" tabindex="-1">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+  </body>
+</html>

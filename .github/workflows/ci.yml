@@ -1,0 +1,112 @@
+name: CI
+
+# The checks the main ruleset requires: job names are the check names and
+# stay stable. As in the app's repository, everything runs on arm64.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  typecheck:
+    name: typecheck
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/pnpm
+      - run: pnpm typecheck
+
+  lint:
+    name: lint
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/pnpm
+      # Biome, then what the content must hold: a page in every language, who
+      # wrote each Finnish and Swedish text, no legal text by a machine.
+      - run: pnpm lint
+      - name: No private key in tracked files
+        run: |
+          if git grep -lE 'BEGIN( RSA| EC| OPENSSH| ENCRYPTED)? PRIVATE KEY' -- . ':!*.md'; then
+            echo "::error::a private key is tracked; rotate it, then remove it from history"; exit 1
+          fi
+
+  test:
+    name: test
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/pnpm
+      - run: pnpm test
+
+  site:
+    name: site
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/pnpm
+      - run: pnpm build
+      # No script, nothing from elsewhere, no dead link, a language and one h1 on every page.
+      - run: pnpm check:site
+
+  audit:
+    name: audit
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/pnpm
+      - run: pnpm audit --audit-level high
+
+  issue-link:
+    name: issue-link
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04-arm
+    env:
+      PR_BODY: ${{ github.event.pull_request.body }}
+    steps:
+      - name: the body references an issue without closing it
+        run: |
+          if ! grep -Eq '#[0-9]+' <<< "$PR_BODY"; then
+            echo '::error::The pull request body names no issue. Add "Refs kuutti-fi/kuutti-app#<n>" or "Refs #<n>".'
+            exit 1
+          fi
+          if grep -Eiq '\b(close|closes|closed|fix|fixes|fixed|resolve|resolves|resolved)\b[[:space:]]*([a-z0-9._-]+/[a-z0-9._-]+)?#[0-9]+' <<< "$PR_BODY"; then
+            echo '::error::A closing keyword would close the issue on merge. Write "Refs #<n>"; the maintainer closes the issue after testing.'
+            exit 1
+          fi
+
+  workflows:
+    name: workflows
+    # Static checks of the workflows themselves: zizmor for injection,
+    # permissions and pinning, and the invariants script of the app's repository.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+      - name: zizmor and the permission invariants
+        run: |
+          pip install --quiet zizmor==1.30.1 pyyaml==6.0.2
+          zizmor --no-progress --min-severity medium --min-confidence medium .github/workflows
+          python .github/scripts/check-workflow-permissions.py

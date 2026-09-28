@@ -1,0 +1,36 @@
+---
+import { type Locale, pathOf } from "../i18n/locales.ts";
+import { t } from "../i18n/ui.ts";
+import { navigation } from "../lib/content.ts";
+
+interface Props {
+  locale: Locale;
+  /** The page's slug ("" is the home page), for "you are here". */
+  slug: string;
+}
+const { locale, slug } = Astro.props;
+// The pages that carry `nav` in their front matter, in that order, and nothing else.
+const links = await navigation(locale);
+const here = (link: string) => slug === link || slug.startsWith(`${link}/`);
+---
+
+<header class="site-header">
+  <div>
+    <a class="brand" href={pathOf(locale, "")} aria-current={slug === "" ? "page" : undefined}>
+      <img src="/logo.png" alt={t(locale, "site.name")} width="40" height="40" />
+    </a>
+    <nav class="site-nav" aria-label={t(locale, "nav.label")}>
+      <ul class="links">
+        {
+          links.map((link) => (
+            <li>
+              <a href={pathOf(locale, link.slug)} aria-current={here(link.slug) ? "page" : undefined}>
+                {link.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

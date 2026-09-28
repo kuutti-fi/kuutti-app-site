@@ -1,0 +1,132 @@
+---
+import Notice from "../components/Notice.astro";
+import { formatDate, LANGUAGE_IN, t } from "../i18n/ui.ts";
+import Base from "../layouts/Base.astro";
+import { legalShelf, writtenIn } from "../lib/content.ts";
+import { drawFlags } from "../lib/flag.ts";
+import { type RouteProps, routes } from "../lib/routes.ts";
+
+// Every page of the site is made here; src/lib/routes.ts says which there are.
+type Props = RouteProps;
+
+export const getStaticPaths = routes;
+
+const { locale, slug, alternates, view } = Astro.props;
+
+const shelf = await legalShelf(locale);
+
+// A text as the content layer rendered it, with the flag of Finland drawn
+// where the author wrote its emoji (src/lib/flag.ts). Nothing else runs on it.
+const htmlOf = (entry: { id: string; rendered?: { html: string } }): string => {
+  if (entry.rendered === undefined) throw new Error(`${entry.id} was not rendered`);
+  return drawFlags(entry.rendered.html);
+};
+const html =
+  view.kind === "page" ? htmlOf(view.page) : view.kind === "text" ? htmlOf(view.text) : null;
+
+// The home page says what the placeholder page said (docs/decisions.md, 8):
+// the logo, the name, and that the app is coming. Nothing else, no button.
+const head =
+  view.kind === "home"
+    ? { title: t(locale, "site.name"), description: t(locale, "home.description") }
+    : view.kind === "shelf"
+      ? { title: t(locale, "legal.title"), description: t(locale, "legal.description") }
+      : view.kind === "page"
+        ? { title: view.page.data.title, description: view.page.data.description }
+        : { title: view.text.data.title, description: view.text.data.description };
+const draft = view.kind === "text" && view.text.data.status === "draft";
+// A legal text is read in the language it was written in, whatever the site speaks.
+const textLanguage = view.kind === "text" ? writtenIn(view.text.id).language : locale;
+---
+
+<Base
+  locale={locale}
+  slug={slug}
+  title={head.title}
+  description={head.description}
+  alternates={alternates}
+  noindex={draft}
+>
+  {
+    view.kind === "home" && (
+      <section class="hero">
+        <img src="/logo.png" alt="" width="392" height="392" />
+        <h1>{t(locale, "site.name")}</h1>
+        <p>{t(locale, "home.soon")}</p>
+      </section>
+    )
+  }
+
+  {
+    view.kind === "page" && html !== null && (
+      <article class="prose">
+        <h1>{view.page.data.title}</h1>
+        {view.page.data.machine && (
+          <Notice
+            title={t(locale, "notice.machine.title")}
+            body={t(locale, "notice.machine.body")}
+          />
+        )}
+        <Fragment set:html={html} />
+      </article>
+    )
+  }
+
+  {
+    view.kind === "shelf" && (
+      <section class="prose">
+        <h1>{t(locale, "legal.title")}</h1>
+        <p class="lead">{t(locale, "legal.intro")}</p>
+        <ul class="documents">
+          {shelf.map((text) => (
+            <li id={text.slug}>
+              <h2>
+                {text.title}
+                <span class="tag">
+                  {t(locale, text.status === "draft" ? "legal.draft" : "legal.inForce")}
+                </span>
+              </h2>
+              <p>{text.description}</p>
+              <ul class="versions">
+                {text.versions.map((version) => (
+                  <li>
+                    <a
+                      href={version.href}
+                      hreflang={version.language}
+                      aria-label={`${text.title}, ${LANGUAGE_IN[locale][version.language]}`}
+                    >
+                      {LANGUAGE_IN[locale][version.language]}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  {
+    view.kind === "text" && html !== null && (
+      <article class="prose" lang={textLanguage === locale ? undefined : textLanguage}>
+        <h1>{view.text.data.title}</h1>
+        <p class="meta">
+          {t(locale, "doc.dated", { date: formatDate(locale, view.text.data.dated) })}
+          {view.text.data.version &&
+            ` · ${t(locale, "doc.version", { version: view.text.data.version })}`}
+        </p>
+        {draft && (
+          <Notice title={t(locale, "notice.draft.title")} body={t(locale, "notice.draft.body")} />
+        )}
+        {view.binding && (
+          <Notice
+            title={t(locale, "notice.notBinding.title")}
+            body={t(locale, "notice.notBinding.body")}
+          />
+        )}
+        <Fragment set:html={html} />
+      </article>
+    )
+  }
+</Base>

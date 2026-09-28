@@ -1,0 +1,466 @@
+/*
+ * The site's look. The colours are the app's light design tokens (TD-9,
+ * apps/mobile/src/theme/tokens.css in the app's repository), so the site and
+ * the app are one thing to the eye. Light only, as the placeholder page at
+ * kuutti.app was (docs/decisions.md, 9); the high-contrast pair answers the
+ * system's "increase contrast".
+ *
+ * No framework. Inter, the placeholder's typeface, is served by the site
+ * itself (public/fonts, SIL Open Font License 1.1), never from another host;
+ * fluid sizes, and a column that is as wide as a line should be long.
+ * Nothing here needs a script.
+ */
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/inter-latin-wght-normal.woff2") format("woff2");
+}
+
+:root {
+  color-scheme: light;
+
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  --card: 210 40% 98%;
+  --primary: 224 76% 48%;
+  --primary-foreground: 0 0% 100%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 19% 35%;
+  --border: 214 32% 85%;
+  --ring: 224 76% 48%;
+  --notice: 40 96% 94%;
+  --notice-border: 35 85% 38%;
+
+  --radius: 8px;
+  --column: 68ch;
+  --wide: 72rem;
+  --gap: clamp(1rem, 0.6rem + 1.6vw, 2rem);
+  --step--1: clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.2rem, 1.1rem + 0.5vw, 1.45rem);
+  --step-2: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --step-3: clamp(2rem, 1.5rem + 2.4vw, 3.25rem);
+
+  --font:
+    Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --primary: 224 90% 25%;
+    --primary-foreground: 0 0% 100%;
+    --muted: 0 0% 100%;
+    --muted-foreground: 0 0% 15%;
+    --border: 0 0% 0%;
+    --ring: 224 90% 25%;
+    --notice: 0 0% 100%;
+    --notice-border: 0 0% 0%;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font);
+  font-size: 100%;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--step-0);
+  overflow-wrap: break-word;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: var(--gap);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  text-wrap: balance;
+  margin: 2em 0 0.5em;
+}
+
+h1 {
+  font-size: var(--step-3);
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin-top: 0.5em;
+}
+
+h2 {
+  font-size: var(--step-2);
+  font-weight: 650;
+}
+
+h3 {
+  font-size: var(--step-1);
+  font-weight: 600;
+}
+
+p,
+ul,
+ol,
+dl,
+blockquote {
+  margin: 0 0 1em;
+}
+
+ul,
+ol {
+  padding-inline-start: 1.4em;
+}
+
+/* The lists of a text, not the lists the site is built of. */
+:where(ul, ol):where(:not([class])) > li + li {
+  margin-top: 0.3em;
+}
+
+a {
+  color: hsl(var(--primary));
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 0.08em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.14em;
+}
+
+:focus-visible {
+  outline: 3px solid hsl(var(--ring));
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid hsl(var(--border));
+  margin: 2em 0;
+}
+
+.skip {
+  position: absolute;
+  inset-inline-start: var(--gap);
+  top: -10rem;
+  z-index: 10;
+  padding: 0.75rem 1rem;
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-radius: var(--radius);
+}
+
+.skip:focus {
+  top: 0.5rem;
+}
+
+/* --- Header ------------------------------------------------------------- */
+
+.site-header {
+  border-bottom: 1px solid hsl(var(--border));
+  background: hsl(var(--background));
+}
+
+.site-header > div {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 0.5rem var(--gap);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 1.5rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  font-weight: 650;
+  font-size: var(--step-1);
+  letter-spacing: 0.01em;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* The logo alone is the link home; its name is the image's alt. */
+.brand img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.site-nav {
+  flex: 1 1 auto;
+}
+
+.site-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.25rem;
+}
+
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.6rem;
+  border-radius: var(--radius);
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  background: hsl(var(--muted));
+}
+
+/* Where you are is said by a line and by weight, never by colour alone. */
+.site-nav a[aria-current="page"] {
+  font-weight: 650;
+  text-decoration: underline;
+  text-decoration-thickness: 0.14em;
+  text-underline-offset: 0.35em;
+}
+
+/* --- Home --------------------------------------------------------------- */
+
+/* The placeholder page, kept: the logo, the name, and that the app is coming. */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: clamp(2rem, 8vw, 6rem) 0 clamp(1.5rem, 4vw, 3rem);
+}
+
+.hero img {
+  width: min(40vw, 220px);
+  height: auto;
+}
+
+.hero h1 {
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.hero p {
+  margin: 0;
+  font-size: var(--step-1);
+  color: hsl(var(--muted-foreground));
+}
+
+/* The flag drawn where a text has its emoji (src/lib/flag.ts): in the line of text, scaling with it; a hairline edge keeps the white field a flag on a white page. */
+.flag {
+  display: inline-block;
+  height: 0.9em;
+  width: calc(0.9em * 18 / 11);
+  vertical-align: -0.08em;
+  margin-inline-start: 0.1em;
+}
+
+.flag .edge {
+  stroke: hsl(var(--border));
+  stroke-width: 0.5;
+}
+
+/* --- Pages and documents ------------------------------------------------ */
+
+.prose {
+  max-width: var(--column);
+  margin: 0 auto;
+}
+
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.prose .lead {
+  font-size: var(--step-1);
+  color: hsl(var(--muted-foreground));
+}
+
+.prose dt {
+  font-weight: 650;
+  margin-top: 1.25em;
+}
+
+.prose dd {
+  margin: 0.25em 0 0;
+}
+
+/* A table wider than a phone scrolls by itself, not the page. */
+.prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 0 0 1.5em;
+  font-size: var(--step--1);
+}
+
+.prose th,
+.prose td {
+  text-align: start;
+  vertical-align: top;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.prose th {
+  font-weight: 650;
+  background: hsl(var(--muted));
+}
+
+.prose blockquote {
+  margin-inline: 0;
+  padding: 0.25rem 1rem;
+  border-inline-start: 4px solid hsl(var(--border));
+  color: hsl(var(--muted-foreground));
+}
+
+.prose code {
+  font-size: 0.92em;
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+  background: hsl(var(--muted));
+}
+
+.meta {
+  color: hsl(var(--muted-foreground));
+  font-size: var(--step--1);
+}
+
+.notice {
+  margin: 0 0 1.5rem;
+  padding: 0.9rem 1rem;
+  background: hsl(var(--notice));
+  border: 1px solid hsl(var(--notice-border));
+  border-inline-start-width: 6px;
+  border-radius: var(--radius);
+}
+
+.notice strong {
+  display: block;
+}
+
+.notice p {
+  margin: 0;
+}
+
+.documents {
+  list-style: none;
+  padding: 0;
+}
+
+.documents li {
+  padding: 1rem 0;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.documents h2 {
+  margin: 0 0 0.25rem;
+  font-size: var(--step-1);
+}
+
+.documents p {
+  margin: 0 0 0.5rem;
+}
+
+.versions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.versions li {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+.versions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+}
+
+.tag {
+  display: inline-block;
+  margin-inline-start: 0.5rem;
+  padding: 0.05rem 0.5rem;
+  border: 1px solid hsl(var(--notice-border));
+  border-radius: 999px;
+  font-size: var(--step--1);
+  font-weight: 600;
+  vertical-align: 0.1em;
+}
+
+/* --- Footer ------------------------------------------------------------- */
+
+.site-footer {
+  margin-top: 3rem;
+  border-top: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  font-size: var(--step--1);
+  color: hsl(var(--muted-foreground));
+}
+
+.site-footer > div {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: var(--gap);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media print {
+  .site-header,
+  .site-footer,
+  .skip {
+    display: none;
+  }
+
+  a {
+    color: inherit;
+  }
+}

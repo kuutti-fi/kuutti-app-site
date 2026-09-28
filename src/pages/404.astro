@@ -1,0 +1,34 @@
+---
+import { DEFAULT_LOCALE, LOCALES, pathOf } from "../i18n/locales.ts";
+import { t } from "../i18n/ui.ts";
+import Base from "../layouts/Base.astro";
+
+// One page for every address that is not there. It cannot know the reader's
+// language, so it says it in every language of the site.
+---
+
+<Base
+  locale={DEFAULT_LOCALE}
+  slug="404"
+  title={t(DEFAULT_LOCALE, "notFound.title")}
+  description={t(DEFAULT_LOCALE, "notFound.body")}
+  alternates={{}}
+  noindex
+>
+  <section class="prose">
+    {
+      LOCALES.map((locale, index) => (
+        <div lang={locale}>
+          {index === 0 ? (
+            <h1>{t(locale, "notFound.title")}</h1>
+          ) : (
+            <h2>{t(locale, "notFound.title")}</h2>
+          )}
+          <p>
+            {t(locale, "notFound.body")} <a href={pathOf(locale, "")}>{t(locale, "notFound.home")}</a>
+          </p>
+        </div>
+      ))
+    }
+  </section>
+</Base>

@@ -1,0 +1,16 @@
+---
+import type { Locale } from "../i18n/locales.ts";
+import { t } from "../i18n/ui.ts";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+// One line, as decided (docs/decisions.md, 8).
+---
+
+<footer class="site-footer">
+  <div>
+    <p>{t(locale, "footer.line")}</p>
+  </div>
+</footer>

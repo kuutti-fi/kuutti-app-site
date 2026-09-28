@@ -1,0 +1,9 @@
+# Code owners are automatically requested for review on pull requests
+# and can be required by branch rulesets.
+*                       @superseacat
+
+# What binds, and what decides how the site is built and served.
+/src/content/legal/     @superseacat
+/.github/               @superseacat
+/amplify.yml            @superseacat
+/customHttp.yml         @superseacat

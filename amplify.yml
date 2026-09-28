@@ -1,0 +1,22 @@
+# Amplify Hosting build spec (ADR-001 of the app's repository: the site is
+# served by Amplify Hosting). The app is connected to this repository; a push
+# to main builds and deploys. Node 22 is the project's engine (package.json),
+# pnpm comes from Corepack at the version package.json pins.
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - nvm install 22
+        - nvm use 22
+        - corepack enable
+        - pnpm install --frozen-lockfile
+    build:
+      commands:
+        - pnpm build
+        # A site with a script, a dead link or something loaded from elsewhere is not deployed.
+        - pnpm check:site
+  artifacts:
+    baseDirectory: dist
+    files:
+      - "**/*"

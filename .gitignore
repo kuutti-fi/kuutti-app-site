@@ -1,0 +1,29 @@
+# --- Secrets and local configuration: never commit these ---
+.env
+.env.*
+*.pem
+*.key
+*.p12
+credentials*.json
+*.secret
+
+# --- Dependencies ---
+node_modules/
+.pnpm-store/
+
+# --- Build output ---
+dist/
+.astro/
+
+# --- Logs and caches ---
+*.log
+.cache/
+
+# --- The agent's notes between sessions ---
+.claude/session-handoff.md
+.claude/settings.local.json
+
+# --- Editors and systems ---
+.DS_Store
+.idea/
+.vscode/

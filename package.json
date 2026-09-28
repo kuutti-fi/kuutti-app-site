@@ -1,0 +1,31 @@
+{
+  "name": "kuutti-app-site",
+  "version": "0.0.0",
+  "private": true,
+  "description": "The website of Kuutti ry: what Kuutti is, who is behind it, and its legal texts. Static, no scripts, no third parties.",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "packageManager": "pnpm@12.4.1+sha512.2e81e399d73fe8390dab25e06aa788ab7a5908248d2f5a370f82b481147a6a7a367bf8048f9a6fdb6460f21a66f0542dedb8b94ca2c8723596741920b1656d4c",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev --host 127.0.0.1",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview --host 127.0.0.1",
+    "typecheck": "ASTRO_TELEMETRY_DISABLED=1 astro check",
+    "lint": "biome check . && node scripts/check-content.ts",
+    "format": "biome check --write .",
+    "test": "node --test scripts/*.test.ts",
+    "check:site": "node scripts/check-site.ts"
+  },
+  "dependencies": {
+    "astro": "7.3.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@biomejs/biome": "2.5.13",
+    "@types/node": "22.20.4",
+    "typescript": "~6.0.3"
+  }
+}

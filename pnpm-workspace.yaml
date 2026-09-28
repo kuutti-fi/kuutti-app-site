@@ -1,0 +1,14 @@
+# One package; the file exists for pnpm's settings.
+packages:
+  - "."
+
+# Astro's bundler. Allowed deliberately; sharp is not: the site optimises no
+# image at build time, and pnpm 12 treats an undeclared ignored build as an
+# install error.
+allowBuilds:
+  esbuild: true
+  sharp: false
+
+# Supply chain: a version must be at least one day old before pnpm installs it
+# (pnpm's default, stated explicitly), as in the app's repository.
+minimumReleaseAge: 1440
