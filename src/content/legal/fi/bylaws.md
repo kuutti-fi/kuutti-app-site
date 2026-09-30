@@ -3,7 +3,7 @@ title: Kuutti ry:n säännöt
 description: Yhdistyksen säännöt - tarkoitus, jäsenet, hallitus, kokoukset ja se, mitä yhdistys ei saa tehdä.
 order: 1
 status: draft
-dated: 2026-09-25
+dated: 2026-09-29
 binding: true
 listing:
   en:
@@ -19,7 +19,7 @@ Yhdistyksen virallinen kieli on suomi. Toiminnassa voidaan käyttää suomea, ru
 
 ## 2. Tarkoitus ja toiminnan laatu
 
-Yhdistyksen tarkoituksena on edistää sitä, että ihmiset voivat Suomessa kohdata toisiaan ja solmia ihmissuhteita turvallisesti, maksutta ja kaikille tasavertaisin ehdoin; vähentää yksinäisyyttä; tukea ihmissuhteita ja yksinäisyyttä koskevaa tieteellistä tutkimusta; sekä ylläpitää avointa yhteisöä, jossa vapaaehtoiset kehittävät palvelua ja tekevät siihen liittyvää tutkimusta yhdessä.
+Yhdistyksen tarkoituksena on edistää turvallisia, maksuttomia ja kaikille tasavertaisia mahdollisuuksia kohdata toisia ihmisiä ja solmia ihmissuhteita Suomessa; vähentää yksinäisyyttä; tukea ihmissuhteita ja yksinäisyyttä koskevaa tieteellistä tutkimusta; sekä ylläpitää avointa yhteisöä, jossa vapaaehtoiset kehittävät palvelua ja tekevät siihen liittyvää tutkimusta yhdessä.
 
 Ihmisten kohtaamista edistäviä palveluita tarjotaan markkinoilla pääosin liiketoimintamallilla, jossa palveluntarjoajan tulot riippuvat käyttäjien palvelussa viettämästä ajasta eivätkä syntyneistä ihmissuhteista. Yhdistys on perustettu tarjoamaan tällainen palvelu ilman tätä eturistiriitaa. Yhdistyksen toiminnan onnistumisen mittarina on se, kuinka moni käyttäjä löytää etsimänsä eikä enää tarvitse palvelua. Palvelun lähdekoodi on julkinen, jotta kuka tahansa voi tarkastaa, miten palvelu toimii.
 
@@ -29,7 +29,7 @@ Toimintansa tukemiseksi yhdistys voi ottaa vastaan avustuksia, lahjoituksia ja t
 
 Yhdistys voi lahjoittaa varoja yliopistolle, ammattikorkeakoululle, Teknologian tutkimuskeskus VTT Oy:lle, terveyden ja hyvinvoinnin laitokselle, työterveyslaitokselle, valtion taloudelliselle tutkimuskeskukselle tai muulle vastaavalle julkisoikeudelliselle tutkimuslaitokselle, jolla on kotipaikka Euroopan unionissa.
 
-Yhdistyksen toiminnan rahoitus ei riipu siitä, kuinka paljon käyttäjät viettävät aikaa sen ylläpitämässä tietoyhteiskunnan palvelussa. Yhdistys ei myy mainostilaa eikä esitä kolmansien osapuolten mainoksia palvelussaan. Yhdistys ei luovuta palvelunsa käyttäjiä koskevia henkilötietoja toiselle rekisterinpitäjälle kaupallista tarkoitusta varten eikä muutakaan palvelun käytöstä kertyvää tietoa kaupalliseen käyttöön. Yhdistys ei tee sopimuksia sellaisten yhteisöjen kanssa, joiden pääasiallista liiketoimintaa on seuranhaku- tai deittipalvelun tarjoaminen kuluttajille, eikä näiden kanssa samaan konserniin kuuluvien yhteisöjen kanssa. Yhdistys ei myöskään ota vastaan tällaisilta yhteisöiltä varoja, lainaa tai muuta rahoitusta. Tämän kohdan sekä sääntöjen 11 ja 13 kohdan rajoitusten tarkoituksena on varmistaa, että yhdistykselle annetut varat, sen hyväksi tehty vapaaehtoistyö ja yhdistyksen luoma palvelu pysyvät tämän tarkoituksen käytössä eivätkä siirry kaupalliseen käyttöön.
+Yhdistyksen toiminnan rahoitus ei riipu siitä, kuinka paljon käyttäjät viettävät aikaa sen ylläpitämässä tietoyhteiskunnan palvelussa. Yhdistys ei myy mainostilaa eikä esitä kolmansien osapuolten mainoksia palvelussaan. Yhdistys ei luovuta palvelunsa käyttäjiä koskevia henkilötietoja toiselle rekisterinpitäjälle kaupallista tarkoitusta varten eikä muutakaan palvelun käytöstä kertyvää tietoa kaupalliseen käyttöön. Yhdistys ei tee sopimuksia sellaisten yhteisöjen kanssa, joiden pääasiallista liiketoimintaa on seuranhaku- tai deittipalvelun tarjoaminen kuluttajille, eikä näiden kanssa samaan konserniin kuuluvien yhteisöjen kanssa. Yhdistys ei myöskään ota vastaan tällaisilta yhteisöiltä varoja, lainaa tai muuta rahoitusta. Tämän kohdan sekä sääntöjen 11 ja 13 kohdan mukaisten rajoitusten tarkoituksena on varmistaa, että yhdistykselle annetut varat, sen hyväksi tehty vapaaehtoistyö ja yhdistyksen luoma palvelu pysyvät tämän tarkoituksen mukaisessa käytössä eivätkä siirry kaupalliseen käyttöön.
 
 Yhdistys ei tavoittele voittoa. Se ei maksa osinkoa eikä muutoinkaan jaa taloudellista ylijäämää jäsenilleen.
 
@@ -108,7 +108,7 @@ Jäsenellä on oikeus erota yhdistyksestä ilmoittamalla siitä kirjallisesti ha
 
 Jäsen voidaan erottaa yhdistyslain 14 §:ssä säädettyjen perusteiden lisäksi, jos hän on yhdistyksen nimissä tai sen puolesta ryhtynyt toimeen, jonka sääntöjen 2 tai 11 kohta kieltää, tai pyrkinyt tällaiseen toimeen. Äänestäminen tai mielipiteen esittäminen yhdistyksen kokouksessa ei ole erottamisperuste.
 
-Päätös yhdistyksen varsinaisen jäsenen, kunniajäsenen tai kunniapuheenjohtajan erottamisesta on tehtävä yhdistyksen kokouksessa yksimielisesti tai siten, että erottamista kannattaa vähintään neljä ääntä ja vastustaa korkeintaan yksi ääni. Erotettavaksi esitetyllä jäsenellä ei ole äänioikeutta tätä päätöstä tehtäessä. Erottamisen syyn selvittämiseen ja selityksen antamiseen sovelletaan yhdistyslain säännöksiä. Erottamisesta on mainittava kokouskutsussa ja kokous on kutsuttava koolle vähintään kolmekymmentä (30) vuorokautta ennen kokousta. Varsinaisen jäsenen erottamista seuraavan kahdentoista (12) kuukauden aikana ei voida tehdä sääntöjen 13 kohdassa tarkoitettuja päätöksiä.
+Päätös yhdistyksen varsinaisen jäsenen, kunniajäsenen tai kunniapuheenjohtajan erottamisesta on tehtävä yhdistyksen kokouksessa yksimielisesti tai siten, että erottamista kannattaa vähintään neljä ääntä ja vastustaa korkeintaan yksi ääni. Erottamisen syyn selvittämiseen ja selityksen antamiseen sovelletaan yhdistyslain säännöksiä. Erottamisesta on mainittava kokouskutsussa ja kokous on kutsuttava koolle vähintään kolmekymmentä (30) vuorokautta ennen kokousta. Varsinaisen jäsenen erottamista seuraavan kahdentoista (12) kuukauden aikana ei voida tehdä sääntöjen 13 kohdassa tarkoitettuja päätöksiä.
 
 Kannattavan jäsenen erottamisesta päättää hallitus.
 
@@ -120,7 +120,7 @@ Päätös sääntöjen muuttamisesta (pois lukien jäljempänä mainitut erityis
 
 Päätös yhdistyksen purkamisesta tai sääntöjen 2, 3, 8, 11, 12 tai 13 kohdan (”erityiset kohdat”) muuttamisesta on tehtävä samansisältöisenä ja yksimielisesti kahdessa (2) perättäisessä yhdistyksen kokouksessa. Erityisten kohtien muuttamisena pidetään myös niiden kanssa ristiriidassa olevan määräyksen lisäämistä sääntöihin. Kokouskutsussa on mainittava yhdistyksen purkamisesta tai sääntöjen erityisten kohtien muuttamisesta, ja kutsuun on liitettävä muutosehdotuksen sanamuoto. Mikäli yhdistyksen purkamista tai sääntöjen erityisten kohtien muuttamista käsittelevässä kokouksessa on edustettuna korkeintaan kolme (3) ääntä, näiden kohtien muuttamiseen tarvitaan kolme (3) perättäistä kokousta, joissa muutosta kannatetaan yksimielisesti.
 
-Sääntöjen muuttamista tai yhdistyksen purkamista käsittelevien yhdistyksen kokousten välillä on oltava vähintään kolmekymmentä (30) päivää. Jokainen asiaa käsittelevä kokous on kutsuttava koolle vähintään kolmekymmentä (30) vuorokautta ennen kokousta.
+Sääntöjen muuttamista tai yhdistyksen purkamista käsittelevien yhdistyksen kokousten välillä on oltava vähintään kolmekymmentä (30) päivää.
 
 Yhdistyksen purkautuessa käytetään yhdistyksen varat yhdistyksen tarkoituksen edistämiseen purkamisesta päättävän kokouksen määräämällä tavalla. Yhdistyksen tullessa lakkautetuksi käytetään sen varat samaan tarkoitukseen. Ensisijaisesti varat on luovutettava toiselle kotimaiselle aatteelliselle yhdistykselle ja toissijaisesti yliopistolle tai muulle tutkimus- tai oppilaitokselle. Luovutuksen ehtona on, että vastaanottaja sitoutuu kirjallisesti noudattamaan luovutettuun omaisuuteen ja oikeuksiin nähden sääntöjen 2 ja 11 kohdan rajoituksia ja luovuttamaan ne edelleen vain samoin ehdoin.
 
