@@ -24,7 +24,7 @@ What is the maintainer's to decide or to supply, and what the site says meanwhil
 
 | question | what the site says meanwhile |
 |---|---|
-| **The bylaws are a draft** in the document they were taken from ("Luonnos") | shown as a draft, in Finnish, at `/legal/bylaws/`, dated 25/09/2026, the day the document was last changed. The three authors' names are left out, as asked |
+| **The bylaws are a draft** in the document they were taken from ("Luonnos") | shown as a draft, in Finnish, at `/legal/bylaws/`, dated 29/09/2026, the day the document was last changed. The three authors' names are left out, as asked |
 | **The Finnish texts of the terms and of the privacy policy**, written by people | English drafts only, marked as drafts and as not binding |
 | **A lawyer's reading** of both, the grounds of section 5 of the privacy policy in particular | drafts |
 | **Finnish and Swedish of the pages** were written by a machine | out of the site for now (decision 8); `docs/translation-review.md` |
