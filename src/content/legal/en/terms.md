@@ -3,7 +3,7 @@ title: Terms of use
 description: What the association promises the people who use Kuutti, and what they promise the association and each other.
 order: 2
 status: draft
-dated: 2026-09-28
+dated: 2026-10-01
 binding: false
 ---
 
@@ -11,7 +11,7 @@ The app is not open yet. Before it opens, these terms are written in Finnish, re
 
 ## 1. What this is
 
-Kuutti is a service for meeting people, run by Kuutti ry, a non-profit association in Espoo, Finland ("the association"). These terms are the agreement between you and the association about your use of it.
+Kuutti is a service for meeting people, run by Kuutti ry (business ID 3659478-7), a non-profit association in Espoo, Finland ("the association"). These terms are the agreement between you and the association about your use of it.
 
 ## 2. What the association promises
 

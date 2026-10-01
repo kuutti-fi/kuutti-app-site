@@ -10,8 +10,8 @@ What is the maintainer's to decide or to supply, and what the site says meanwhil
 
 | question | what the site says meanwhile |
 |---|---|
-| **Is the association registered?** Founded on 01/10/2026 (the founding charter) and the notice of founding filed with the Finnish Patent and Registration Office the same day; not registered yet | "founded on 1 October 2026 and waiting to be entered in the Register of Associations" on the association's page; "being founded" in the legal drafts |
-| **Business ID and address**, for the privacy policy and the terms | the business ID, 3659478-7, is in the footer and under the bylaws' title (`businessId` in `src/site.ts`); the privacy policy says both are "added when the association is registered"; no address anywhere |
+| **Is the association registered?** Founded on 01/10/2026 (the founding charter) and the notice of founding filed with the Finnish Patent and Registration Office the same day; not registered yet | "founded on 1 October 2026 and waiting to be entered in the Register of Associations" on the association's page and in the privacy policy |
+| **Business ID and address**, for the privacy policy and the terms | the business ID, 3659478-7, is in the footer, under the bylaws' title (`businessId` in `src/site.ts`) and in section 1 of the privacy policy and of the terms; the address is "added here when it is registered" in the privacy policy, and is nowhere yet |
 | **A contact address.** `kuutti.app` has a null MX record: the domain receives no mail. A privacy policy needs an address that answers | nothing on the site names an address; `contactEmail` is `null` in `src/site.ts` |
 | **A privacy contact**, by name or by role | "has not named a data protection officer" |
 | **Social channels**: LinkedIn, TikTok, YouTube, Instagram | none shown; `social` is empty in `src/site.ts` |
