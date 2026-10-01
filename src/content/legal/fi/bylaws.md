@@ -2,8 +2,9 @@
 title: Kuutti ry:n säännöt
 description: Yhdistyksen säännöt - tarkoitus, jäsenet, hallitus, kokoukset ja se, mitä yhdistys ei saa tehdä.
 order: 1
-status: draft
-dated: 2026-09-29
+status: filed
+dated: 2026-10-01
+businessId: true
 binding: true
 listing:
   en:
@@ -19,11 +20,11 @@ Yhdistyksen virallinen kieli on suomi. Toiminnassa voidaan käyttää suomea, ru
 
 ## 2. Tarkoitus ja toiminnan laatu
 
-Yhdistyksen tarkoituksena on edistää turvallisia, maksuttomia ja kaikille tasavertaisia mahdollisuuksia kohdata toisia ihmisiä ja solmia ihmissuhteita Suomessa; vähentää yksinäisyyttä; tukea ihmissuhteita ja yksinäisyyttä koskevaa tieteellistä tutkimusta; sekä ylläpitää avointa yhteisöä, jossa vapaaehtoiset kehittävät palvelua ja tekevät siihen liittyvää tutkimusta yhdessä.
+Yhdistyksen tarkoituksena on edistää turvallisia, maksuttomia ja kaikille tasavertaisia mahdollisuuksia kohdata toisia ihmisiä ja solmia ihmissuhteita Suomessa; vähentää yksinäisyyttä; tukea ihmissuhteita ja yksinäisyyttä koskevaa tieteellistä tutkimusta; sekä ylläpitää avointa yhteisöä, jossa vapaaehtoiset kehittävät palvelua.
 
 Ihmisten kohtaamista edistäviä palveluita tarjotaan markkinoilla pääosin liiketoimintamallilla, jossa palveluntarjoajan tulot riippuvat käyttäjien palvelussa viettämästä ajasta eivätkä syntyneistä ihmissuhteista. Yhdistys on perustettu tarjoamaan tällainen palvelu ilman tätä eturistiriitaa. Yhdistyksen toiminnan onnistumisen mittarina on se, kuinka moni käyttäjä löytää etsimänsä eikä enää tarvitse palvelua. Palvelun lähdekoodi on julkinen, jotta kuka tahansa voi tarkastaa, miten palvelu toimii.
 
-Tarkoituksensa toteuttamiseksi yhdistys ylläpitää avoimeen lähdekoodiin perustuvaa tietoyhteiskunnan palvelua, jonka käyttäjät tunnistetaan vahvasti, työskentelee yhdessä tutkimus- ja oppilaitosten kanssa, järjestää tapahtumia ja harjoittaa julkaisutoimintaa.
+Tarkoituksensa toteuttamiseksi yhdistys ylläpitää avoimeen lähdekoodiin perustuvaa tietoyhteiskunnan palvelua, työskentelee yhdessä tutkimus- ja oppilaitosten kanssa, järjestää tapahtumia ja harjoittaa julkaisutoimintaa.
 
 Toimintansa tukemiseksi yhdistys voi ottaa vastaan avustuksia, lahjoituksia ja testamentteja, omistaa toimintaansa varten tarpeellista kiinteää, irtainta ja aineetonta omaisuutta sekä toimeenpanna asianomaisen luvan saatuaan arpajaisia ja rahankeräyksiä.
 

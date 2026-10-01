@@ -4,6 +4,11 @@
  * is a placeholder that looks like the real thing.
  */
 export const SITE = {
+  /**
+   * The association's business ID (Y-tunnus), given by the Finnish Patent and
+   * Registration Office when the notice of founding was filed on 01/10/2026.
+   */
+  businessId: "3659478-7",
   /** Where the app's source is published (AGPL-3.0). */
   appSource: "https://github.com/kuutti-fi/kuutti-app",
   /** Where this site's source is published (AGPL-3.0). */

@@ -20,10 +20,14 @@ export const UI = {
       "The texts that bind the association and the people who use Kuutti. A text is shown in the languages it was written in; a legal text is never translated by a machine.",
     "legal.language": "in {language}",
     "legal.draft": "Draft",
+    "legal.filed": "Filed for registration",
     "legal.inForce": "In force",
     "notice.draft.title": "This is a draft",
     "notice.draft.body":
       "It is published so that it can be read and commented on. It binds nobody yet, and it may still change.",
+    "notice.filed.title": "Adopted, not yet registered",
+    "notice.filed.body":
+      "The founding members have adopted this text, and it has been filed with the Register of Associations. Until the association is registered, the register may still ask for changes.",
     "notice.notBinding.title": "The Finnish text is the one that counts",
     "notice.notBinding.body":
       "This version is for reading. If it and the Finnish text disagree, the Finnish text holds.",
@@ -32,7 +36,8 @@ export const UI = {
       "This page has not yet been read by a native speaker. If something reads wrong, the English page is the source.",
     "doc.dated": "Wording of {date}",
     "doc.version": "Version {version}",
-    "footer.line": "Kuutti ry, Espoo, Finland.",
+    "doc.businessId": "Business ID {businessId}",
+    "footer.line": "Kuutti ry, Espoo, Finland. Business ID {businessId}.",
     "notFound.title": "There is no such page",
     "notFound.body": "The address may be old or mistyped.",
     "notFound.home": "To the home page",

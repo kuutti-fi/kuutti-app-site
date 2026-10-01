@@ -1,6 +1,7 @@
 ---
 import type { Locale } from "../i18n/locales.ts";
 import { t } from "../i18n/ui.ts";
+import { SITE } from "../site.ts";
 
 interface Props {
   locale: Locale;
@@ -11,6 +12,6 @@ const { locale } = Astro.props;
 
 <footer class="site-footer">
   <div>
-    <p>{t(locale, "footer.line")}</p>
+    <p>{t(locale, "footer.line", { businessId: SITE.businessId })}</p>
   </div>
 </footer>

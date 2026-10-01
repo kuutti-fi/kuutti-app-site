@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import { DEFAULT_LOCALE, isLocale, LOCALES, pathOf } from "../src/i18n/locales.ts";
 import { formatDate, LANGUAGE_IN, t, UI } from "../src/i18n/ui.ts";
+import { SITE } from "../src/site.ts";
 
 test("the default language has no prefix, another has its own, and every path ends with a slash", () => {
   assert.equal(pathOf(DEFAULT_LOCALE, ""), "/");
@@ -57,5 +58,8 @@ test("each language names each language", () => {
 
 test("the home page says what the placeholder said, and the footer is one line", () => {
   assert.equal(t("en", "home.soon"), "Coming soon...");
-  assert.equal(t("en", "footer.line"), "Kuutti ry, Espoo, Finland.");
+  assert.equal(
+    t("en", "footer.line", { businessId: SITE.businessId }),
+    "Kuutti ry, Espoo, Finland. Business ID 3659478-7.",
+  );
 });

@@ -42,12 +42,18 @@ const legal = defineCollection({
     description: z.string().min(1).max(200),
     /** The order on the legal page. */
     order: z.number().int().positive(),
-    /** A draft binds nobody and says so on the page; a text in force names its version. */
-    status: z.enum(["draft", "in_force"]),
+    /**
+     * A draft binds nobody and says so on the page; a filed text is adopted
+     * and waits for the register (the bylaws, until the association is
+     * registered); a text in force names its version.
+     */
+    status: z.enum(["draft", "filed", "in_force"]),
     /** The version a person consents to in the app (consent_version there), once in force. */
     version: z.string().optional(),
     /** The day of the wording, as written in the text's source. */
     dated: z.coerce.date(),
+    /** Whether the page names the association's business ID under the title: the bylaws do. */
+    businessId: z.boolean().default(false),
     /** Whether this language is the one that counts when two disagree. */
     binding: z.boolean(),
     /**
