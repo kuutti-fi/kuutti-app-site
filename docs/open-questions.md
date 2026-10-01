@@ -10,8 +10,8 @@ What is the maintainer's to decide or to supply, and what the site says meanwhil
 
 | question | what the site says meanwhile |
 |---|---|
-| **Is the association registered?** The app's `CLAUDE.md` says "a registered association"; the founding notes plan the founding meeting for December 2026 | "being founded", on the association's page and in the legal drafts |
-| **Business ID and address**, for the privacy policy and the terms | "added when the association is registered" |
+| **Is the association registered?** Founded on 01/10/2026 (the founding charter) and the notice of founding filed with the Finnish Patent and Registration Office the same day; not registered yet | "founded on 1 October 2026 and waiting to be entered in the Register of Associations" on the association's page and in the privacy policy |
+| **Business ID and address**, for the privacy policy and the terms | the business ID, 3659478-7, is in the footer, under the bylaws' title (`businessId` in `src/site.ts`) and in section 1 of the privacy policy and of the terms; the address is "added here when it is registered" in the privacy policy, and is nowhere yet |
 | **A contact address.** `kuutti.app` has a null MX record: the domain receives no mail. A privacy policy needs an address that answers | nothing on the site names an address; `contactEmail` is `null` in `src/site.ts` |
 | **A privacy contact**, by name or by role | "has not named a data protection officer" |
 | **Social channels**: LinkedIn, TikTok, YouTube, Instagram | none shown; `social` is empty in `src/site.ts` |
@@ -24,7 +24,7 @@ What is the maintainer's to decide or to supply, and what the site says meanwhil
 
 | question | what the site says meanwhile |
 |---|---|
-| **The bylaws are a draft** in the document they were taken from ("Luonnos") | shown as a draft, in Finnish, at `/legal/bylaws/`, dated 29/09/2026, the day the document was last changed. The three authors' names are left out, as asked |
+| **The bylaws are adopted, not registered**: the founding charter of 01/10/2026, filed with the register the same day | shown in Finnish at `/legal/bylaws/` as filed for registration (`status: filed`), dated 01/10/2026, word for word as filed; until registration the register may ask for changes. No founder's name, birth date or address is shown |
 | **The Finnish texts of the terms and of the privacy policy**, written by people | English drafts only, marked as drafts and as not binding |
 | **A lawyer's reading** of both, the grounds of section 5 of the privacy policy in particular | drafts |
 | **Finnish and Swedish of the pages** were written by a machine | out of the site for now (decision 8); `docs/translation-review.md` |

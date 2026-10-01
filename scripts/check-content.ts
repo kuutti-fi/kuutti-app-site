@@ -7,9 +7,9 @@
  *   `reviewedBy` with the native reader's name. English is the source and
  *   carries neither.
  * - A legal text is never machine-written into a language: it has no
- *   `machine` key at all. A text in force names its version and has exactly
- *   one binding language; a draft may still be waiting for its binding text,
- *   and never has two.
+ *   `machine` key at all. A text adopted (filed or in force) has exactly one
+ *   binding language, and a text in force names its version; a draft may
+ *   still be waiting for its binding text, and never has two.
  * - Nothing in the content loads anything from anybody else: no image, no
  *   frame, no script, and no HTML at all.
  */
@@ -86,14 +86,14 @@ for (const page of pages) {
 for (const slug of new Set(legal.map((text) => text.slug))) {
   const versions = legal.filter((text) => text.slug === slug);
   const binding = versions.filter((text) => text.front.get("binding") === "true");
-  const inForce = versions.some((text) => text.front.get("status") === "in_force");
-  if (binding.length > 1 || (inForce && binding.length !== 1)) {
+  const adopted = versions.some((text) => text.front.get("status") !== "draft");
+  if (binding.length > 1 || (adopted && binding.length !== 1)) {
     problems.push(
-      `legal/*/${slug}.md: ${binding.length} binding versions; a text in force has exactly one, a draft at most one`,
+      `legal/*/${slug}.md: ${binding.length} binding versions; an adopted text has exactly one, a draft at most one`,
     );
   }
   if (new Set(versions.map((text) => text.front.get("status"))).size > 1) {
-    problems.push(`legal/*/${slug}.md: a draft in one language and in force in another`);
+    problems.push(`legal/*/${slug}.md: one status in one language and another in another`);
   }
   for (const text of versions) {
     if (text.front.has("machine")) {

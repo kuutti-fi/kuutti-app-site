@@ -5,6 +5,7 @@ import Base from "../layouts/Base.astro";
 import { legalShelf, writtenIn } from "../lib/content.ts";
 import { drawFlags } from "../lib/flag.ts";
 import { type RouteProps, routes } from "../lib/routes.ts";
+import { SITE } from "../site.ts";
 
 // Every page of the site is made here; src/lib/routes.ts says which there are.
 type Props = RouteProps;
@@ -35,6 +36,8 @@ const head =
         ? { title: view.page.data.title, description: view.page.data.description }
         : { title: view.text.data.title, description: view.text.data.description };
 const draft = view.kind === "text" && view.text.data.status === "draft";
+const filed = view.kind === "text" && view.text.data.status === "filed";
+const STATUS = { draft: "legal.draft", filed: "legal.filed", in_force: "legal.inForce" } as const;
 // A legal text is read in the language it was written in, whatever the site speaks.
 const textLanguage = view.kind === "text" ? writtenIn(view.text.id).language : locale;
 ---
@@ -83,7 +86,7 @@ const textLanguage = view.kind === "text" ? writtenIn(view.text.id).language : l
               <h2>
                 {text.title}
                 <span class="tag">
-                  {t(locale, text.status === "draft" ? "legal.draft" : "legal.inForce")}
+                  {t(locale, STATUS[text.status])}
                 </span>
               </h2>
               <p>{text.description}</p>
@@ -115,9 +118,14 @@ const textLanguage = view.kind === "text" ? writtenIn(view.text.id).language : l
           {t(locale, "doc.dated", { date: formatDate(locale, view.text.data.dated) })}
           {view.text.data.version &&
             ` · ${t(locale, "doc.version", { version: view.text.data.version })}`}
+          {view.text.data.businessId &&
+            ` · ${t(locale, "doc.businessId", { businessId: SITE.businessId })}`}
         </p>
         {draft && (
           <Notice title={t(locale, "notice.draft.title")} body={t(locale, "notice.draft.body")} />
+        )}
+        {filed && (
+          <Notice title={t(locale, "notice.filed.title")} body={t(locale, "notice.filed.body")} />
         )}
         {view.binding && (
           <Notice

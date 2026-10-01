@@ -3,7 +3,7 @@ title: Privacy policy
 description: What Kuutti keeps about the people who use it, why, for how long, who else handles it, and what you can do about it.
 order: 3
 status: draft
-dated: 2026-09-28
+dated: 2026-10-01
 binding: false
 ---
 
@@ -11,7 +11,7 @@ This text describes the app as it is built today. The app is not open yet, and s
 
 ## 1. Who is responsible
 
-The controller of your personal data is **Kuutti ry**, a non-profit association in Espoo, Finland. The association is being founded; its business ID and its address are added here when it is registered.
+The controller of your personal data is **Kuutti ry** (business ID 3659478-7), a non-profit association in Espoo, Finland. The association was founded on 1 October 2026 and is waiting to be entered in the Register of Associations; its address is added here when it is registered.
 
 An address for questions and for requests about your data is published here before the app opens. The association has not named a data protection officer.
 

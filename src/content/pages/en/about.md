@@ -4,13 +4,13 @@ description: Kuutti ry - why it was founded, what its bylaws forbid it to do, an
 nav: 2
 ---
 
-Kuutti ry is a non-profit association in Espoo. It is being founded, and its [bylaws](/legal/bylaws/), in Finnish, are a draft that anybody can read.
+Kuutti ry is a non-profit association in Espoo, founded on 1 October 2026 and waiting to be entered in the Register of Associations. Its [bylaws](/legal/bylaws/), in Finnish, are public.
 
 ## Why
 
 Services for meeting people are mostly sold in a way that pays the provider for the time you spend in the service, and not for the relationships that come of it. The longer you look, the better for the seller.
 
-Kuutti ry is founded to offer such a service without that conflict of interest. Its purpose, in the words of its bylaws, is that people in Finland can meet each other and form relationships safely, free of charge and on equal terms; to reduce loneliness; to support research into relationships and loneliness; and to keep an open community in which volunteers build the service together.
+Kuutti ry is founded to offer such a service without that conflict of interest. Its purpose, in the words of its bylaws, is to promote safe, free and equal opportunities for everyone to meet other people and form relationships in Finland; to reduce loneliness; to support research into relationships and loneliness; and to keep an open community in which volunteers develop the service.
 
 The association measures its success by how many people find what they were looking for and no longer need the service.
 
