@@ -56,6 +56,13 @@ test("each language names each language", () => {
   }
 });
 
+test("every channel of the association is an https address with a mark the footer draws", () => {
+  for (const channel of SITE.social) {
+    assert.match(channel.href, /^https:\/\//);
+    assert.ok(["linkedin", "github"].includes(channel.mark));
+  }
+});
+
 test("the home page says what the placeholder said, and the footer is one line", () => {
   assert.equal(t("en", "home.soon"), "Coming soon...");
   assert.equal(

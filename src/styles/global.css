@@ -438,6 +438,11 @@ hr {
 }
 
 .site-footer > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
   max-width: var(--wide);
   margin: 0 auto;
   padding: var(--gap);
@@ -445,6 +450,33 @@ hr {
 
 .site-footer p {
   margin: 0;
+}
+
+.channels {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.channels a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--radius);
+  color: inherit;
+}
+
+.channels a:hover {
+  background: hsl(var(--muted));
+  color: hsl(var(--foreground));
+}
+
+.channels svg {
+  fill: currentColor;
 }
 
 @media (prefers-reduced-motion: no-preference) {
