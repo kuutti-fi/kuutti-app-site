@@ -40,4 +40,4 @@ Kuutti is built by volunteers, in the open, in one public repository.
 - Identification goes through the Finnish Trust Network, by way of Telia's identification service.
 - The app speaks Finnish, Swedish and English, follows the text size and contrast you have chosen on your phone, and every decision in it is a button, not a swipe.
 
-The source, the decisions and the open questions are at [github.com/kuutti-fi/kuutti-app](https://github.com/kuutti-fi/kuutti-app).
+The source, the decisions and the open questions are at [github.com/kuutti-ry/kuutti-app](https://github.com/kuutti-ry/kuutti-app).

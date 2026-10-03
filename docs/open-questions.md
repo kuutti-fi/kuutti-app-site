@@ -50,9 +50,9 @@ Drafting it meant reading what the app keeps. These are for the app's repository
 
 | question | what is done meanwhile |
 |---|---|
-| **The repository's name**, and when it is published | published 28/09/2026 as `kuutti-fi/kuutti-app-site`, public like the app's, on the maintainer's word after he had looked at the site |
+| **The repository's name**, and when it is published | published 28/09/2026 as `kuutti-fi/kuutti-app-site` (`kuutti-ry/kuutti-app-site` since the organisation was renamed on 03/10/2026), public like the app's, on the maintainer's word after he had looked at the site |
 | **The move of Amplify Hosting** to the new repository | done 28/09/2026: a new app, `kuutti-app-site`, created in the console and connected to this repository, `kuutti.app` moved to it, the old app deleted; `amplify.yml` and `customHttp.yml` work as written. The setup is in the app repository's `infra/README.md`, "The website" |
-| **Removing `site/`** from the app's repository, with its `amplify.yml` and the mentions in `CLAUDE.md` and ADR-001 | kuutti-fi/kuutti-app#109 |
+| **Removing `site/`** from the app's repository, with its `amplify.yml` and the mentions in `CLAUDE.md` and ADR-001 | kuutti-ry/kuutti-app#109 |
 | **The waitlist's numbers on the home page.** The API has a public `GET /waitlist` and allows the site's origin | not shown: it needs a script in the browser, and the site has none |
 | **The wording about collecting money** on "Support us" ("a notification to the police or a permit") | written from the founding notes; to be confirmed by somebody who knows the law on money collections |
 | **The store links** | "Coming soon...", kept from the placeholder, where the links will be; `stores` is `null` in `src/site.ts` |

@@ -1,6 +1,6 @@
 <!-- What changes and why. -->
 
-Refs kuutti-fi/kuutti-app#
+Refs kuutti-ry/kuutti-app#
 
 <!-- One "Refs" per issue this touches; the site's issues live in the app's
      repository. Never "Closes/Fixes/Resolves": the maintainer closes an issue

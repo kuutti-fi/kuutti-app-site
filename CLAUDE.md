@@ -1,8 +1,8 @@
 # Kuutti: the website
 
-The website of Kuutti ry (kuutti.app): what Kuutti is, who is behind it, and the legal texts. A static site made with Astro. The app is another repository, `kuutti-fi/kuutti-app`, and its `CLAUDE.md` carries the project's standing rules; what is here is what this site needs of them, and what is the site's own. Where the two disagree about the project, the app's repository wins.
+The website of Kuutti ry (kuutti.app): what Kuutti is, who is behind it, and the legal texts. A static site made with Astro. The app is another repository, `kuutti-ry/kuutti-app`, and its `CLAUDE.md` carries the project's standing rules; what is here is what this site needs of them, and what is the site's own. Where the two disagree about the project, the app's repository wins.
 
-The site's issues live in the app's repository (`kuutti-fi/kuutti-app#53` is the site).
+The site's issues live in the app's repository (`kuutti-ry/kuutti-app#53` is the site).
 
 ## Commands
 
@@ -34,7 +34,7 @@ As in the app's repository:
 - Every commit is signed off (`git commit -s`). Enable the hook once per clone: `git config core.hooksPath .githooks`.
 - Linear history: no merge commits, no force-push, never touch the ruleset or the repository's settings.
 - Subject line imperative and under 72 characters; the body says what and why.
-- Every pull request body carries `Refs kuutti-fi/kuutti-app#n`. Never a closing keyword: an issue closes when the maintainer has looked at the result.
+- Every pull request body carries `Refs kuutti-ry/kuutti-app#n`. Never a closing keyword: an issue closes when the maintainer has looked at the result.
 - Commit only what was asked. No `dist/`, no `.astro/`, no unrelated lockfile churn.
 
 ## Code and content

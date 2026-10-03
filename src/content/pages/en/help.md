@@ -21,7 +21,7 @@ In the app, under **Your account**, you can download everything Kuutti holds abo
 
 ## Reporting a security problem
 
-Please do not report a security problem in public. Use the private form at [github.com/kuutti-fi/kuutti-app/security](https://github.com/kuutti-fi/kuutti-app/security/advisories/new). You get an answer within seven days.
+Please do not report a security problem in public. Use the private form at [github.com/kuutti-ry/kuutti-app/security](https://github.com/kuutti-ry/kuutti-app/security/advisories/new). You get an answer within seven days.
 
 ## Contact
 

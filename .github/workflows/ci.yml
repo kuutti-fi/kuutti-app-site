@@ -85,7 +85,7 @@ jobs:
       - name: the body references an issue without closing it
         run: |
           if ! grep -Eq '#[0-9]+' <<< "$PR_BODY"; then
-            echo '::error::The pull request body names no issue. Add "Refs kuutti-fi/kuutti-app#<n>" or "Refs #<n>".'
+            echo '::error::The pull request body names no issue. Add "Refs kuutti-ry/kuutti-app#<n>" or "Refs #<n>".'
             exit 1
           fi
           if grep -Eiq '\b(close|closes|closed|fix|fixes|fixed|resolve|resolves|resolved)\b[[:space:]]*([a-z0-9._-]+/[a-z0-9._-]+)?#[0-9]+' <<< "$PR_BODY"; then
