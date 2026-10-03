@@ -13,7 +13,7 @@ When the association is registered and may collect money, this page will say how
 
 Kuutti is built by volunteers, and there is room for more:
 
-- **Code and design.** The work is in the open at [github.com/kuutti-fi/kuutti-app](https://github.com/kuutti-fi/kuutti-app), and the issues say what is being built.
+- **Code and design.** The work is in the open at [github.com/kuutti-ry/kuutti-app](https://github.com/kuutti-ry/kuutti-app), and the issues say what is being built.
 - **Language.** The app and this site are written in English first and translated by a machine. Every Finnish and Swedish text needs a native reader before it is released.
 - **Research.** If you study relationships or loneliness and want to work with data that people gave knowingly, the association wants to hear from you.
 
