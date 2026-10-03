@@ -12,3 +12,14 @@ allowBuilds:
 # Supply chain: a version must be at least one day old before pnpm installs it
 # (pnpm's default, stated explicitly), as in the app's repository.
 minimumReleaseAge: 1440
+
+# pnpm audit: one advisory set aside, with its reason. GHSA-ch52-4w7c-c8xp
+# (http-cache-semantics <= 4.2.0, high, no patched version yet) is about a
+# shared cache that serves many users. Astro uses the package only to cache
+# remote images while it builds (astro/dist/assets/build/remote.js); the site
+# fetches no remote image (rule 1) and runs no server, so nothing is cached
+# for anybody. Remove the entry when a patched version exists or Astro drops
+# the package.
+auditConfig:
+  ignoreGhsas:
+    - GHSA-ch52-4w7c-c8xp
