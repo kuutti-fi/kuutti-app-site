@@ -38,6 +38,8 @@ export const UI = {
     "doc.version": "Version {version}",
     "doc.businessId": "Business ID {businessId}",
     "footer.line": "Kuutti ry, Espoo, Finland. Business ID {businessId}.",
+    "footer.channels": "Kuutti ry elsewhere",
+    "footer.channel": "Kuutti ry on {name}",
     "notFound.title": "There is no such page",
     "notFound.body": "The address may be old or mistyped.",
     "notFound.home": "To the home page",

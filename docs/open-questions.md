@@ -14,7 +14,7 @@ What is the maintainer's to decide or to supply, and what the site says meanwhil
 | **Business ID and address**, for the privacy policy and the terms | the business ID, 3659478-7, is in the footer, under the bylaws' title (`businessId` in `src/site.ts`) and in section 1 of the privacy policy and of the terms; the address is "added here when it is registered" in the privacy policy, and is nowhere yet |
 | **A contact address.** `kuutti.app` has a null MX record: the domain receives no mail. A privacy policy needs an address that answers | nothing on the site names an address; `contactEmail` is `null` in `src/site.ts` |
 | **A privacy contact**, by name or by role | "has not named a data protection officer" |
-| **Social channels**: LinkedIn, TikTok, YouTube, Instagram | none shown; `social` is empty in `src/site.ts` |
+| **Social channels**: TikTok, YouTube, Instagram | LinkedIn and GitHub are in the footer (`social` in `src/site.ts`); the others are not shown until they exist |
 | **The team**: who wants to be named, and with which title | "listed here once they have chosen"; nobody is named |
 | **Those who help**: whether Telia, Väestöliitto or anybody else has agreed to be named | "nobody is listed yet" |
 | **The story of the name and of the logo**, and the questions about marketing | the name's meaning only: a seal pup, and the logo its tail. To be confirmed, and told properly |
